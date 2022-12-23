@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="text-center">Todos List</h1>
+  <div id="addTodo_container" class="padding-xs">
+    <!-- //listen event from child and then calling fn with that event -->
+    <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+  </div>
+  <br />
+  <h3>Your Todos</h3>
+  <div *ngIf="this.todos.length === 0">No Todos to show.</div>
+  <ul *ngFor="let todo of todos">
+    <!-- //we are passing todo as a props and receiveing an event todoDelete from child -->
+    <app-todo-item
+      [todo]="todo"
+      (todoDelete)="deleteTodo($event)"
+      (todoCheckbox)="toggleTodo($event)"
+    ></app-todo-item>
+  </ul>
+</div>

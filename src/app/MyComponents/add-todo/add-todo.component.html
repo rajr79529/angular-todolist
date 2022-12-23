@@ -1,0 +1,30 @@
+<div class="my-3">
+  <h3>Add a Todo</h3>
+  <form (ngSubmit)="onSubmit()" ngNativeValidate>
+    <div class="mb-3">
+      <label for="title" class="form-label">Todo Title</label>
+      <input
+        type="text"
+        [(ngModel)]="title"
+        name="title"
+        class="form-control"
+        id="title"
+        aria-describedby="titleHelp"
+        required="true"
+      />
+    </div>
+    <div class="mb-3">
+      <!-- //we will have to add formsModule in appModule.ts > imports -->
+      <label for="desc" class="form-label">Description</label>
+      <input
+        type="text"
+        [(ngModel)]="desc"
+        class="form-control"
+        name="desc"
+        id="desc"
+        required="true"
+      />
+    </div>
+    <button type="submit" class="btn btn-m btn-primary">Add Todo</button>
+  </form>
+</div>
